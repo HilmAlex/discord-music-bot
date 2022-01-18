@@ -54,7 +54,7 @@ class Music(commands.Cog):
         await ctx.voice_channel.disconnect()
 
     @commands.command()
-    async def p(self, ctx, url):
+    async def play(self, ctx, url):
         await self.join(ctx)
 
         try:
@@ -72,7 +72,6 @@ class Music(commands.Cog):
                 # PLAY
                 thread = Thread(target=self.play_song, args=[ctx, source])
                 self.queue.append(thread)
-
         except:
             print("Error")
 
